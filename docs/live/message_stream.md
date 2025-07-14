@@ -8,7 +8,7 @@
 
 认证方式: Cookie(SESSDATA)
 
-鉴权方式：[Wbi 签名](../misc/sign/wbi.md)
+鉴权方式：[Wbi 签名](../misc/sign/wbi.md), Cookie中的`buvid3`不为空
 
 可以选择进行认证，若未认证视作未登录，将会受到限制，详见后续内容。
 
@@ -22,7 +22,7 @@
 | w_rid  | str | Wbi 签名 | 必要  | 详见 [Wbi 签名](../misc/sign/wbi.md) |
 | wts    | num | 当前时间戳  | 必要  | 详见 [Wbi 签名](../misc/sign/wbi.md) |
 
-注: 从2025年5月26日开始正式强制要求Wbi签名。
+注: 从2025年5月26日开始正式强制要求Wbi签名，2025年6月27日开始要求`buvid3`。见[#1295](https://github.com/SocialSisterYi/bilibili-API-collect/issues/1295)
 
 **JSON回复：**
 
@@ -2157,7 +2157,7 @@ type===106
 
 <details>
 <summary>查看消息示例：</summary>
-  
+
 ```json
 {
     "cmd": "ONLINE_RANK_V2",
@@ -2225,7 +2225,7 @@ type===106
   }
 }
 ```
-  
+
 </details>
 
 #### 未登录通知 (LOG_IN_NOTICE)
